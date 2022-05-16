@@ -1,0 +1,65 @@
+/* ================================================
+================ Main HEADER Button ===============
+=================================================== */
+
+.btn {
+    &:link, &:visited {
+      display: inline-block;
+      padding: 1.5rem 4rem;
+      border-radius: 10rem;
+      position: relative;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+    }
+  
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, .2); /* Closer to the user */
+  
+      /* Expanding effect when hover*/
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* Closer to the screen */
+    }
+    
+    /* Original btn */
+    &--white {
+      background-color: $color-white;
+      color: $color-grey;
+  
+      /* Overlap btn - necessary element to create the animation */
+      &::after{
+      background-color: $color-white;
+    }
+    }
+  
+    /* Overlap btn - necessary element to create the animation */
+    &::after {
+      content: '';
+      /* same properties as the "father" button */
+      display: inline-block;
+      height: 100%; /* Same size of the original btn */
+      width: 100%; /* Same size of the original btn */
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+    }
+  
+    /* Animation - When we reload the page*/
+    &--animated {
+      animation: moveInBottom .5s ease-out .75s;
+      animation-fill-mode: backwards;
+    }
+  }
+  
