@@ -1,0 +1,45 @@
+/* ================================================
+============== BODY About Section =================
+=================================================== */
+
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    position: absolute;
+    z-index: 10;
+    outline-offset: 2rem;
+    /* Animation -> photo comes first*/
+    transition: all .2s;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      z-index: 20;
+      outline: 1.5rem solid $color-primary;
+       /* Animation -> photo comes first, looks bigger & goes up*/
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+      transform: scale(1.05) translateY(-.5rem);
+    }
+  }
+
+  &:hover &__photo:not(:hover){
+    /* Animation -> photo with no hover looks smaller*/
+    transform: scale(.95);
+  }
+}

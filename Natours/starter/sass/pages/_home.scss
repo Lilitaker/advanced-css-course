@@ -1,0 +1,6 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  /* Move to the top the about section to cover the white space in the header --> 95vh (header) - 75vh (polygon) = 20 */
+  margin-top: -20vh;
+}
