@@ -310,6 +310,25 @@ body {
   transform: scale(0.95);
 }
 
+.feature-box {
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 80% white = 20% opacity */
+  font-size: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.feature-box__icon {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03);
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -390,4 +409,17 @@ body {
   padding: 25rem 0;
   /* Move to the top the about section to cover the white space in the header --> 95vh (header) - 75vh (polygon) = 20 */
   margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -12rem;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  /* Animation incline section to the left */
+  transform: skewY(-7deg);
+  /* Animation incline direct children to the right */
+}
+.section-features > * {
+  transform: skewY(7deg);
 }/*# sourceMappingURL=main.css.map */
