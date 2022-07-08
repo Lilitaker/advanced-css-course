@@ -1,0 +1,43 @@
+.card {
+  /* We need height here (same as __side) because as both elements are absolute, the height collapse */
+  height: 50rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+  &__side {
+    width: 100%;
+    height: 50rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 2rem;
+    /* The backside is not visible */
+    backface-visibility: hidden;
+    transition: all .8s ease;
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+    }
+  }
+
+  /* when .card:hover , .card__side--front will do... */
+  &:hover &__side--front{
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back{
+    transform: rotateY(0);
+  }
+}
