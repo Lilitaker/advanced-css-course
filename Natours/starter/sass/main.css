@@ -486,13 +486,49 @@ body {
   clip-path: circle(50% at 50% 50%);
   /* Translate: Give margin between the circle and the surrounding text || skewX: To fix the view of img due to the non-rectangular shape */
   transform: translateX(-3rem) skewX(12deg);
+  /* Fixes the bug of vertical line next to the img when hover */
+  overflow: hidden;
+  /* For the text inside the image */
+  position: relative;
 }
 .story__img {
   height: 100%;
+  /* Center the image in the circle */
+  transform: translateX(-4rem) scale(1.4);
+  /* To fix issues with the img due to the transition */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all 0.5s;
 }
 .story__text {
   /* skewX: To fix the view of text due to the non-rectangular shape*/
   transform: skewX(12deg);
+}
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* To center from the middle of the box and not from the start point of it || The 20% is to let the text down when is no hover*/
+  transform: translate(-50%, 20%);
+  color: #fff;
+  font-size: 1.7rem;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  /* To eliminate de shaking of the text (in the img) at the end of the transition */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.story:hover .story__caption {
+  opacity: 1;
+  /* The -50% is to put the text up when is hover */
+  transform: translate(-50%, -50%);
+}
+.story:hover .story__img {
+  /* zoom out the img when we hover */
+  transform: translateX(-4rem) scale(1);
+  filter: blur(3px) brightness(80%);
 }
 
 .header {
@@ -518,7 +554,8 @@ body {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); /* To center from the middle of the box and not from the start point of it */
+  /* To center from the middle of the box and not from the start point of it */
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 

@@ -29,7 +29,8 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%); /* To center from the middle of the box and not from the start point of it */
+    /* To center from the middle of the box and not from the start point of it */
+    transform: translate(-50%, -50%); 
     text-align: center;
   }
 }  
