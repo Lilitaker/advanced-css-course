@@ -57,7 +57,10 @@ body {
     $color-primary-dark
   );
   background-clip: text;
-  -webkit-background-clip: text; /* Compatibility with old versions of safari */
+
+  /* Compatibility with old versions of safari */
+  -webkit-background-clip: text;
+
   color: transparent;
   transition: all 0.2s;
 

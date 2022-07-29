@@ -1,0 +1,40 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+
+  /* We need to add 3rem to the left because the transform property in story__shape (that adds margin) */
+  padding: 6rem 6rem 6rem 9rem;
+
+  border-radius: 3px;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  font-size: $default-font-size;
+
+  /* To give the non-rectagular shape to the element*/
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+
+    /* Make clip property work in all browsers */
+    -webkit-clip-path: circle(50% at 50% 50%);
+
+    /* Make the element look like a circle */
+    clip-path: circle(50% at 50% 50%);
+
+    /* Translate: Give margin between the circle and the surrounding text || skewX: To fix the view of img due to the non-rectangular shape */
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__text {
+    /* skewX: To fix the view of text due to the non-rectangular shape*/
+    transform: skewX(12deg);
+  }
+}
