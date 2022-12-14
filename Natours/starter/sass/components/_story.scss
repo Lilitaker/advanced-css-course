@@ -6,8 +6,8 @@
   padding: 6rem 6rem 6rem 9rem;
 
   border-radius: 3px;
-  box-shadow: 0 3rem 6rem rgba($color-black, .1);
-  background-color: $color-white;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
   font-size: $default-font-size;
 
   /* To give the non-rectagular shape to the element*/
@@ -42,8 +42,8 @@
 
     /* To fix issues with the img due to the transition */
     backface-visibility: hidden;
-    
-    transition: all .5s;
+
+    transition: all 0.5s;
   }
 
   &__text {
@@ -63,15 +63,15 @@
     opacity: 0;
     text-align: center;
     text-transform: uppercase;
-    transition: all .5s;
-    
+    transition: all 0.5s;
+
     /* To eliminate de shaking of the text (in the img) at the end of the transition */
     backface-visibility: hidden;
   }
 
   &:hover &__caption {
     opacity: 1;
-    
+
     /* The -50% is to put the text up when is hover */
     transform: translate(-50%, -50%);
   }
